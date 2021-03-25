@@ -9,6 +9,11 @@ class RestaurantController < ApplicationController
     render json: @restaurante
   end
 
+  def show_all
+    @restaurante = Restaurant.all
+    render json: @restaurante
+  end
+
   def create
     @restaurante = Restaurant.new(restaurante_params)
     if @restaurante.save
