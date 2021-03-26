@@ -2,11 +2,13 @@ class RestaurantController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
+    
   end
 
   def show
     @restaurante = Restaurant.find(params[:id])
-    render json: @restaurante
+    @comments = Comment.where(restaurant_id:@restaurante.id)
+    render json: {restaurante: @restaurante, comments:@comments}
   end
 
   def show_all

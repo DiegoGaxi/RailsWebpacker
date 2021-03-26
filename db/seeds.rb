@@ -10,31 +10,87 @@ Restaurant.delete_all
 Restaurant.create! (
   [
     {
-      nombre: "Be yourself; everyone else is already taken.",
-      descripcion: "Oscar Wilde",
+      descripcion: "Be yourself; as a Dogo",
+      nombre: "Hot Dogs",
       fotografia: 'NULL'
     },
     {
-      nombre: "Two things are infinite: the universe and human stupidity; " \
-            "and I'm not sure about the universe.",
-      descripcion: "Albert Einstein",
+      descripcion: "Para Los Genios de Comida",
+      nombre: "Albert Einstein",
       fotografia: 'NULL'
     },
     {
-      nombre: "So many books, so little time.",
-      descripcion: "Frank Zappa",
+      descripcion: "Sushi de Culiacan",
+      nombre: "Culichi Roll",
       fotografia: 'NULL'
     },
     {
-      nombre: "Be the change that you wish to see in the world",
-      descripcion: "Mahatma Gandhi",
+      descripcion: "Comida China al mejor precio",
+      nombre: "Mahatma onichan",
       fotografia: 'NULL'
     },
     {
-      nombre: "If you tell the truth, you don't have to remember anything.",
-      descripcion: "Mark Twain",
+      descripcion: "Nuestro Pozole De Casa",
+      nombre: "Pozole",
+      fotografia: 'NULL'
+    },
+    {
+      descripcion: "El mejor en Carnes",
+      nombre: "Carnitas",
       fotografia: 'NULL'
     }
   ]
 )
 puts "Restaurants seeded!"
+
+Comment.delete_all
+
+# Comment.create! (
+  [
+    {
+      restaurant_id: 54,
+      message: "Quiero mas!!",
+      fecha:"2021-03-24",
+      usuario:"Anonimo"
+    },
+    {
+      restaurant_id: 55,
+      message: "Albert Einstein Comeria aqui",
+      fecha:"2021-03-24",
+      usuario:"Anonimo"
+    },
+    {
+      restaurant_id: 56,
+      message: "Delicioso, Si vuelvo.",
+      fecha:"2021-03-24",
+      usuario:"Anonimo"
+    },
+    {
+      restaurant_id: 57,
+      message: "Me encantó",
+      fecha:"2021-03-24",
+      usuario:"Anonimo"
+    },
+    {
+      restaurant_id: 58,
+      message: "Muy Rico",
+      fecha:"2021-03-24",
+      usuario:"Anonimo"
+    },
+    {
+      restaurant_id: 59,
+      message: "Buen Restaurante",
+      fecha:"2021-03-24",
+      usuario:"Anonimo"
+    }
+  ].each do |prueba|
+    a = Comment.new(prueba)
+    a.save()
+  end
+# )
+
+
+puts "Comments seeded!"
+
+# ActiveRecord::Base.connection.reset_pk_sequence!(:restaurants)
+# ActiveRecord::Base.connection.reset_pk_sequence!(:comments)

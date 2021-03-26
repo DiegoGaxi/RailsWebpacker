@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   #   resources :restaurants
   # end
 
+  match '*path', to: 'restaurant#index', via: :all
 end

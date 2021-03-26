@@ -7,8 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import ('../styles/application.css');
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-router-dom";
 
 Rails.start()
 Turbolinks.start()
